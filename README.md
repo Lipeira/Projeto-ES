@@ -91,7 +91,7 @@ Equipe de desenvolvimento do projeto de E.S:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Wilson"/><br>
+        <img src="https://avatars.githubusercontent.com/u/82616384?v=4" width="100px;" alt="Wilson"/><br>
         <sub>
           <b>Renan Martiniano</b>
         </sub>
