@@ -9,7 +9,7 @@
 
 * *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Animais em situação de rua`
 * *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como ajudar os animais em situação de rua de maneira mais eficaz?`
-* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, temos: `Facilitar o acesso e a troca de informações em relação a animais que estão em situação de rua.`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Facilitar o acesso e a troca de informações em relação a animais que estão em situação de rua.`
 
 * *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como mapear os animais abandonados de forma eficaz?`<br>`Como garantir a proteção dos animais mapeados?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
 
@@ -22,6 +22,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Tarefa 3
 - [ ] Tarefa 4
 - [ ] Tarefa 5
+
 ## ☕ Usando <nome_do_projeto>
 
 Para usar <nome_do_projeto>, siga estas etapas:
