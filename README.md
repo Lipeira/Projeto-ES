@@ -17,7 +17,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
-* Big idea: 
+* *Que big idea você propõe para o projeto?*: `Animais em situação de rua`
+* *Que questão essencial você propõe para o projeto?*: `como ajudar os animais em situação de rua de maneira mais eficaz?`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*: `Facilitar o acesso à informação, em relação a   animais que estão em situação de rua.`
 
 ## 🚀 Instalando <nome_do_projeto>
 
