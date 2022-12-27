@@ -3,7 +3,15 @@
 
 <img src="Abandono-de-animais-1200x800.jpg" alt="exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> De acordo com a Organização Mundial de Saúde (OMS), somente no Brasil, cerca de 30 milhões de animais estão abandonados, sendo aproximadamente 20 milhões de cães e 10 milhões de gatos. Em grandes metrópoles, para cada cinco habitantes há um cachorro. Desses, 10% estão abandonados (25 de mai. de 2022)
+
+## 💻 Challenge Based Learning aplicado ao Projeto
+
+* *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Animais em situação de rua`
+* *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como ajudar os animais em situação de rua de maneira mais eficaz?`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, temos: `Facilitar o acesso e a troca de informações em relação a animais que estão em situação de rua.`
+
+* *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como mapear os animais abandonados de forma eficaz?`<br>`Como garantir a proteção dos animais mapeados?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
 
 ### Ajustes e melhorias
 
@@ -14,27 +22,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Tarefa 3
 - [ ] Tarefa 4
 - [ ] Tarefa 5
-
-## 💻 Challenge Based Learning aplicado ao Projeto
-
-* *Que big idea você propõe para o projeto?*: `Animais em situação de rua`
-* *Que questão essencial você propõe para o projeto?*: `como ajudar os animais em situação de rua de maneira mais eficaz?`
-* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*: `Facilitar o acesso à informação, em relação a   animais que estão em situação de rua.`
-
-## 🚀 Instalando <nome_do_projeto>
-
-Para instalar o <nome_do_projeto>, siga estas etapas:
-
-Linux e macOS:
-```
-<comando_de_instalação>
-```
-
-Windows:
-```
-<comando_de_instalação>
-```
-
 ## ☕ Usando <nome_do_projeto>
 
 Para usar <nome_do_projeto>, siga estas etapas:
