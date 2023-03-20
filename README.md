@@ -75,14 +75,6 @@ Equipe de desenvolvimento do projeto de E.S:
         </sub>
       </a>
     </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/82616384?v=4" width="100px;" alt="Wilson"/><br>
-        <sub>
-          <b>Renan Martiniano</b>
-        </sub>
-      </a>
-    </td>
   </tr>
 </table>
 
