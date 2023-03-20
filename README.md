@@ -65,7 +65,7 @@ Equipe de desenvolvimento do projeto de E.S:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/83172852?s=400&u=3a0200ed602355a0a764c386f420bd3884d2f0b2&v=4" width="100px;" alt="Lipeira"/><br>
+        <img src="https://pbs.twimg.com/profile_images/1591558315254890500/ETIHb4Nl_400x400.jpg" width="100px;" alt="Lipeira"/><br>
         <sub>
           <b>Luis Felipe Mota</b>
         </sub>
