@@ -5,6 +5,10 @@
 
 > De acordo com a Organização Mundial de Saúde (OMS), somente no Brasil, cerca de 30 milhões de animais estão abandonados, sendo aproximadamente 20 milhões de cães e 10 milhões de gatos. Em grandes metrópoles, para cada cinco habitantes há um cachorro. Desses, 10% estão abandonados (25 de mai. de 2022)
 
+## Para acessar o Figma do Projeto (UI), [Clique Aqui](https://www.figma.com/file/WQt0vSYlpgCy7tAJxBaBkr/Untitled?node-id=19-140&t=aJM6Si5DJetBYxu5-0)
+
+
+
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
 * *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Animais em situação de rua`
