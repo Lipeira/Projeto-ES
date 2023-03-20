@@ -14,15 +14,15 @@
 
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
-* *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Animais em situação de rua`
-* *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como ajudar os animais em situação de rua de maneira mais eficaz?`
-* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Facilitar o acesso e a troca de informações em relação a animais que estão em situação de rua.`
+* *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Adoção de animais de abrigo.`
+* *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como conectar abrigos de animais com potenciais adotantes?`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Ajudar a encontrar um lar amoroso para cada animal de estimação de abrigo, reduzindo o número de animais abandonados`
 
-* *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como mapear os animais abandonados de forma eficaz?`<br>`Como garantir a proteção dos animais mapeados?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
-* *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*:
-* *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: 
-* *Que solução você sugere para ser desenvolvida?*:
-* *Como você testará a solução no mundo real?*:
+* *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como conectar abrigos e adotantes de forma eficaz?`<br>`Como garantir que os adotantes são confiáveis?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
+* *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*: Uma interface que conecta os dois lados da problemática: abrigos e adotantes.
+* *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: ANALISAR OS FUNDAMENTOS 
+* *Que solução você sugere para ser desenvolvida?*: Um aplicativo que ajuda a promover a adoção de animais de abrigo, conectando abrigos de animais e potenciais adotantes em uma plataforma fácil de usar e interativa.
+* *Como você testará a solução no mundo real?*: As ideias para teste são: 1: MVP, para validar a efetividade da solução. 2: Contato direto com um potencial cliente para servir de ponto de partida.
 
 
 ### Ajustes e melhorias
