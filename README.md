@@ -8,7 +8,7 @@
 ## Alguns links importantes
 
 ### Para acessar o Figma do Projeto (UI), [Clique Aqui](https://www.figma.com/file/WQt0vSYlpgCy7tAJxBaBkr/Untitled?node-id=19-140&t=aJM6Si5DJetBYxu5-0)
-### Para acessar a Apresentação do projeto, [Clique Aqui]()
+### Para acessar a Apresentação do projeto, [Clique Aqui](https://www.canva.com/design/DAFNPku86Zc/HmCPWTT6SvuV5OEiPsV52g/edit)
 
 
 
