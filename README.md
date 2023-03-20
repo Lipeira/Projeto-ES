@@ -12,6 +12,11 @@
 * *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Facilitar o acesso e a troca de informações em relação a animais que estão em situação de rua.`
 
 * *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como mapear os animais abandonados de forma eficaz?`<br>`Como garantir a proteção dos animais mapeados?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
+* *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*:
+* *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: 
+* *Que solução você sugere para ser desenvolvida?*:
+* *Como você testará a solução no mundo real?*:
+
 
 ### Ajustes e melhorias
 
