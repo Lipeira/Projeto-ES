@@ -5,12 +5,13 @@
 
 > De acordo com a Organização Mundial de Saúde (OMS), somente no Brasil, cerca de 30 milhões de animais estão abandonados, sendo aproximadamente 20 milhões de cães e 10 milhões de gatos. Em grandes metrópoles, para cada cinco habitantes há um cachorro. Desses, 10% estão abandonados (25 de mai. de 2022)
 
-## Alguns links importantes
+## 🏹 Alguns links importantes
 
-### Para acessar o Figma do Projeto (UI), [Clique Aqui](https://www.figma.com/file/WQt0vSYlpgCy7tAJxBaBkr/Untitled?node-id=19-140&t=aJM6Si5DJetBYxu5-0)
-### Para acessar a Apresentação do projeto, [Clique Aqui](https://www.canva.com/design/DAFNPku86Zc/HmCPWTT6SvuV5OEiPsV52g/edit)
+*  Para acessar o Figma do Projeto (UI), *[Clique Aqui](https://www.figma.com/file/WQt0vSYlpgCy7tAJxBaBkr/Untitled?node-id=19-140&t=aJM6Si5DJetBYxu5-0)*
 
+##	✨ Apresentações do nosso projeto:
 
+* 💬 **ETAPA 1** (27/03) : Para acessar a apresentação do status report planejado para essa data acima, [Clique Aqui](https://www.canva.com/design/DAFNPku86Zc/HmCPWTT6SvuV5OEiPsV52g/edit)
 
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
@@ -25,25 +26,24 @@
 * *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com um potencial cliente para servir de ponto de partida.`
 
 
-### Ajustes e melhorias
+### 👮 Ajustes e melhorias 
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Tarefa 1
-- [ ] Tarefa 2
-- [ ] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [ ] Tarefa x
+- [ ] Tarefa y
+- [ ] Tarefa z
+- [ ] Tarefa w
+- [ ] Tarefa v
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Usando o Pets Save
 
-Para usar <nome_do_projeto>, siga estas etapas:
+Para usar o site do **Pets Save**, siga estas etapas:
 
 ```
 <exemplo_de_uso>
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
 
 ## 📫 Contribuindo para <nome_do_projeto>
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
@@ -65,7 +65,7 @@ Equipe de desenvolvimento do projeto de E.S:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://pbs.twimg.com/profile_images/1591558315254890500/ETIHb4Nl_400x400.jpg" width="100px;" alt="Lipeira"/><br>
+        <img src="https://t.ctcdn.com.br/_Sx_1_ut0ubvJSZ6gy9KFYiNmDE=/400x400/smart/i490763.jpeg" width="100px;" alt="Lipeira"/><br>
         <sub>
           <b>Luis Felipe Mota</b>
         </sub>
@@ -90,4 +90,4 @@ Equipe de desenvolvimento do projeto de E.S:
   </tr>
 </table>
 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+[⬆ Voltar ao topo]()<br>
