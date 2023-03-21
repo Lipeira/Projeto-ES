@@ -11,7 +11,7 @@
 
 ##	✨ Apresentações do nosso projeto:
 
-* 💬 **ETAPA 1** (27/03) : Para acessar a apresentação do status report planejado para essa data acima, [Clique Aqui](https://www.canva.com/design/DAFNPku86Zc/HmCPWTT6SvuV5OEiPsV52g/edit)
+* 💬 **ETAPA 1** (27/03) : Para acessar a apresentação do **STATUS REPORT** planejado para essa data acima, *[Clique Aqui](https://www.canva.com/design/DAFNPku86Zc/HmCPWTT6SvuV5OEiPsV52g/edit)*
 
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
