@@ -21,7 +21,7 @@
 
 * *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como conectar abrigos e adotantes de forma eficaz?`<br>`Como garantir que os adotantes são confiáveis?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
 * *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*: <br>`Uma interface que conecta os dois lados da problemática: abrigos e adotantes.`
-* *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: <br>`ANALISAR OS FUNDAMENTOS` 
+* *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: <br>`ANALISAR OS FUNDAMENTOS`<br> `Metodologia Ágil (Iteração com o cliente)` <br> `Experiência de usuário (UX/UI)` <br> `MVP` <br> `Teste de Software`
 * *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo que ajuda a promover a adoção de animais de abrigo, conectando abrigos de animais e potenciais adotantes em uma plataforma fácil de usar e interativa.`
 * *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com um potencial cliente para servir de ponto de partida.`
 
