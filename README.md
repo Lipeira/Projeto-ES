@@ -17,7 +17,7 @@
 
 * *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Adoção de animais de abrigo.`
 * *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como conectar abrigos de animais com potenciais adotantes?`
-* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Ajudar a encontrar um lar amoroso para cada animal de estimação de abrigo, reduzindo o número de animais abandonados`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Ajudar a encontrar um lar para cada animal de estimação de abrigo, reduzindo o número de animais abandonados`
 
 * *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`Como conectar abrigos e adotantes de forma eficaz?`<br>`Como garantir que os adotantes são confiáveis?`<br>`Como captar mais pessoas para utilizarem o aplicativo?`
 * *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*: <br>`Uma interface que conecta os dois lados da problemática: abrigos e adotantes.`
