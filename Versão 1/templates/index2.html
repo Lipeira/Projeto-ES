@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Tela de Login</title>
+	<link rel="stylesheet" href="/static/style2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      	integrity="sha384-Qz5ksEiv9X5X0m2QJxMlvLPjzPFySw0MjKQlXpuPu/NtYkD9zvYtqcKuV+72jtWr"
+      	crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<div class="container">
+        <div class="login-box">
+            <div class="accessibility">
+                <button id="accessibility-btn" class="btn-dark"><i class="fas fa-adjust"></i></button>
+            </div>
+            <h2>Login</h2>
+            <form method="POST" action="{{ url_for('views.login') }}">
+                <div class="user-box">
+                    <input type="text" name="username" required="">
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="password" required="">
+                    <label>Password</label>
+                </div>
+                <a href="{{ url_for('views.singup') }}" class="signup-link">Cadastrar</a>
+                <button type="submit" class="btn"><i class="fas fa-paw"></i> Logar</button>
+            </form>
+
+            {% if error %}
+            <p class="error-message">{{ error }}</p>
+            {% endif %}
+            
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/adoteumviralata/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+
+            <p class="rights">Todos os direitos reservados</p>
+        </div>
+        <div class="background"></div>
+    </div>
+    <script>
+      $(document).ready(function() {
+          $('#accessibility-btn').click(function() {
+              $('body').toggleClass('dark-mode');
+          });
+      });
+  </script>
+  </body>
+  </html>

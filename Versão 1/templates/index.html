@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Comunitários</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Fdk5O5ztyULntgYGpEofNyYjROKZbM2aqLR5n/Dgj+TWn5w5jJ8gFwtSNd1r2rXq3lZxGIPt03exbsimBjR1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header class="header">
+        <h1><i class="fas fa-paw"></i> Animais</h1>
+      <div class="welcome">
+        Seja Bem-vindo!
+      </div>
+
+      <div class="profile">
+        {{name_login}}
+        <i class="fas fa-user-circle profile-icon"></i>
+      </div>
+
+    </header>
+    <main>
+      <div class="card-container">
+        <div class="card">
+            <img src="https://petcaramelo.com/wp-content/uploads/2018/07/Maltes-cachorro.jpg" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Bruno</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Maltês</p>
+              <p>Idade: 4 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://cdn.folhape.com.br/upload/dn_arquivo/2020/11/cat-2068462-1920.jpg" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Sofia</h2>
+              <p>Espécie: Gato</p>
+              <p>Raça: Siamês</p>
+              <p>Idade: 2 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Cacau</h2>
+              <p>Espécie: Coelho</p>
+              <p>Raça: Lionhead</p>
+              <p>Idade: 1 ano</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Rex</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Golden Retriever</p>
+              <p>Idade: 3 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Gabi</h2>
+              <p>Espécie: Gato</p>
+              <p>Raça: Persa</p>
+              <p>Idade: 5 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Boris</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Bulldog Francês</p>
+              <p>Idade: 2 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Luna</h2>
+              <p>Espécie: Gato</p>
+              <p>Raça: Maine Coon</p>
+              <p>Idade: 1 ano</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Max</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Yorkshire Terrier</p>
+              <p>Idade: 6 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Pretinho</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Yorkshire Terrier</p>
+              <p>Idade: 6 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Pretinho</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Yorkshire Terrier</p>
+              <p>Idade: 6 anos</p>
+            </div>
+          </div>
+          
+      </div>
+      <div class="pagination">
+        <button class="prev-button"><i class="fas fa-chevron-left"></i> Anterior</button>
+        <button class="next-button">Próxima <i class="fas fa-chevron-right"></i></button>
+      </div>
+    </main>
+    
+    <!-- Fixed Buttons -->
+<div class="fixed-buttons">
+    <button class="add-button" onclick="showAddForm()">+</button>
+    <button class="remove-button" onclick="showRemoveForm()">-</button>
+</div>
+  
+  <!-- Add Form Modal -->
+  <div id="add-form-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="hideAddForm()">&times;</span>
+      <h2>Cadastro de Animal</h2>
+      <form enctype="multipart/form-data" id="animal-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="species">Espécie:</label>
+        <input type="text" id="species" name="species" required>
+        
+        <label for="breed">Raça:</label>
+        <input type="text" id="breed" name="breed" required>
+        
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="description">Descrição:</label>
+        <textarea id="description" name="description" rows="3" required></textarea>
+        
+        <label for="image">Imagem:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Remove Form Modal -->
+  <div id="remove-form-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideRemoveForm()">&times;</span>
+        <h2>Remover Animal</h2>
+        <form>
+          <label for="search">Buscar animal:</label>
+          <input type="text" id="search" name="search" required>
+          
+          <div id="search-results">
+            <!-- Resultados da busca serão adicionados aqui dinamicamente -->
+          </div>
+          
+          <button type="submit">Remover</button>
+        </form>
+      </div>   
+  </div>
+  
+
+    <!-- Adicione um elemento para a nova tela com fundo semi-transparente -->
+    <div class="overlay"></div>
+
+    <!-- Adicione um elemento para o conteúdo da nova tela -->
+    <div class="popup">
+        <div class="animal-info">
+            <div class="gallery">
+                <div class="gallery-item">
+                  <img src="https://picsum.photos/400/300?random=1" alt="Cachorro">
+                </div>
+                <div class="gallery-item">
+                  <img src="https://picsum.photos/400/300?random=2" alt="Gato">
+                </div>
+              </div>              
+              <h2 class="animal-name">Tommy</h2>
+              <div class="animal-details">
+                <div class="animal-property">
+                  <p class="animal-label"><strong>Idade:</strong></p>
+                  <p class="animal-value">5 anos</p>
+                </div>
+                <div class="animal-property">
+                  <p class="animal-label"><strong>Raça:</strong></p>
+                  <p class="animal-value">Vira-lata</p>
+                </div>
+                <div class="animal-property">
+                  <p class="animal-label"><strong>Espécie:</strong></p>
+                  <p class="animal-value">Canina</p>
+                </div>
+                <div class="animal-property">
+                  <p class="animal-label"><strong>Local:</strong></p>
+                  <p class="animal-value">CCSA</p>
+                </div>
+              </div>
+              <p class="animal-description">Tommy é um cachorro de personalidade marcante, sua simpatia é contagiante e ele adora estar perto de pessoas e outros cães. Com seus 5 anos de idade, ele tem muita energia e sempre está pronto para brincar e correr.</p>
+        </div>
+      </div>      
+
+<script>
+
+// Adicione um event listener a cada card
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    // Adicione a classe "show" ao elemento do fundo e da nova tela
+    document.querySelector('.overlay').classList.add('show');
+    document.querySelector('.popup').classList.add('show');
+  });
+});
+
+// Adicione um event listener ao elemento do fundo para fechar a nova tela
+document.querySelector('.overlay').addEventListener('click', () => {
+  // Remova a classe "show" do elemento do fundo e da nova tela
+  document.querySelector('.overlay').classList.remove('show');
+  document.querySelector('.popup').classList.remove('show');
+});
+
+
+</script>
+
+
+
+<script>
+
+const addBtn = document.querySelector(".add-button");
+const addFormModal = document.querySelector("#add-form-modal");
+const removeBtn = document.querySelector(".remove-button");
+const removeFormModal = document.querySelector("#remove-form-modal");
+const closeBtns = document.querySelectorAll(".close");
+
+addBtn.addEventListener("click", () => {
+  addFormModal.style.display = "block";
+});
+
+removeBtn.addEventListener("click", () => {
+  removeFormModal.style.display = "block";
+});
+
+closeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    addFormModal.style.display = "none";
+    removeFormModal.style.display = "none";
+  });
+});
+
+
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+</script>
+
+
+
+<script>
+
+/* Coloque os animais testes, ou anexe À API ou DATABASE */
+const animals = [];
+
+// Seleciona todos os elementos H2 dentro dos cards de animais
+const animalTitles = document.querySelectorAll('.card h2');
+
+// Itera sobre os elementos H2 e adiciona seus valores à lista de animais
+animalTitles.forEach((title) => {
+  animals.push(title.textContent);
+});
+
+
+
+// Seleciona o input de busca
+const searchInput = document.getElementById('search');
+
+// Adiciona o evento "keyup" no input de busca
+searchInput.addEventListener('keyup', (event) => {
+  // Obtém a string de busca digitada pelo usuário
+  const searchString = event.target.value.toLowerCase();
+  
+  // Seleciona a div que irá conter os resultados da busca
+  const searchResults = document.getElementById('search-results');
+  
+  // Cria uma lista de animais correspondente à busca
+  const filteredAnimals = animals.filter((animal) => {
+    return animal.toLowerCase().includes(searchString);
+  });
+  
+  // Remove todos os resultados anteriores da div "search-results"
+  searchResults.innerHTML = '';
+  
+  // Adiciona os novos resultados na div "search-results"
+  if (filteredAnimals.length > 0) {
+    filteredAnimals.forEach((animal) => {
+      const resultItem = document.createElement('div');
+      resultItem.classList.add('result-item');
+      resultItem.textContent = animal;
+      
+      // Adiciona evento "click" no resultado da busca
+      resultItem.addEventListener('click', () => {
+        searchInput.value = animal;
+        searchResults.innerHTML = '';
+      });
+      
+      searchResults.appendChild(resultItem);
+    });
+  } else {
+    const noResults = document.createElement('div');
+    noResults.classList.add('no-results');
+    noResults.textContent = 'Nenhum animal encontrado';
+    searchResults.appendChild(noResults);
+  }
+});
+
+
+if (filteredAnimals.length > 0) {
+filteredAnimals.forEach((animal) => {
+const resultItem = document.createElement('div');
+resultItem.classList.add('result-item');
+resultItem.textContent = animal;
+// Adiciona evento "click" no resultado da busca
+resultItem.addEventListener('click', () => {
+  searchInput.value = animal;
+  searchResults.innerHTML = '';
+});
+
+searchResults.appendChild(resultItem);
+});
+} else {
+const noResults = document.createElement('div');
+noResults.classList.add('no-results');
+noResults.textContent = 'Nenhum animal encontrado';
+searchResults.appendChild(noResults);
+}
+
+
+</script>
+
+
+<div id="logo-container">
+  <img src="/static/images/logoufpe.png" alt="Logo UFPE">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+  display: flex;
+  height: 100vh;
+  background-color: #f2f2f2;
+  }
+  
+  .background {
+  flex: 1;
+  background-image: url("/static/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.1s ease-in-out;
+  }
+  
+  .login-box {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  }
+  
+  .login-box h2 {
+  margin-bottom: 30px;
+  color: #333;
+  }
+  
+  .user-box {
+  position: relative;
+  margin-bottom: 30px;
+  }
+  
+  .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  background: transparent;
+  }
+  
+  .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  pointer-events: none;
+  transition: 0.5s;
+  }
+  
+  .user-box input:focus ~ label,
+  .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #1abc9c;
+  font-size: 14px;
+  }
+  
+  a {
+  color: #999;
+  font-size: 14px;
+  text-decoration: none;
+  }
+  
+  .btn {
+  display: inline-block;
+  background-color: #1abc9c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  }
+  
+  .btn:hover {
+  background-color: #0d8a6a;
+  }
+  
+  .fa-paw {
+  margin-right: 4px;
+  }
+  
+  @media (max-width: 768px) {
+  .container {
+  flex-direction: column;
+  }
+  .background {
+  height: 50vh;
+  }
+  .login-box {
+  width: 100%;
+  height: 50vh;
+  }
+  }
+  
+  /* Estilos para a lista de ícones */
+  .social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+  
+  .social-icons li {
+  margin: 0 10px;
+  }
+  
+  .social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #444;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+  background-color: #111;
+  }
+  
+  /* Estilos para os ícones */
+  .fa {
+  font-size: 16px;
+  margin-right: 5px;
+  }
+
+  /* Estilos para o botão de acessibilidade */
+.accessibility-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  }
+  
+  .accessibility-btn i {
+  font-size: 24px;
+  }
+  
+  /* Dark mode */
+  .dark-mode {
+  background-color: #111;
+  color: #fff;
+  }
+  
+  .dark-mode .background {
+  background-image: url("/static/images/background-dark.jpg");
+  }
+  
+  .dark-mode .login-box {
+  background-color: #222;
+  color: #fff;
+  }
+  
+  .dark-mode .user-box input {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  }
+  
+  .dark-mode .user-box input:focus ~ label,
+  .dark-mode .user-box input:valid ~ label {
+  color: #1abc9c;
+  }
+  
+  .dark-mode .btn {
+  background-color: #1abc9c;
+  color: #333;
+  }
+  
+  .dark-mode .btn:hover {
+  background-color: #0d8a6a;
+  }
+  
+  .dark-mode .social-icons a {
+  background-color: #fff;
+  color: #333;
+  }
+  
+  .dark-mode .social-icons a:hover {
+  background-color: #0d8a6a;
+  }
+  
+  /* Dark mode - botão de acessibilidade */
+  .dark-mode .accessibility-btn {
+  background-color: #333;
+  color: #fff;
+  }
+  
+  .dark-mode .accessibility-btn:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  }
+  
+  .dark-mode .accessibility-btn i {
+  color: #fff;
+  }
+  
+  .dark-mode label {
+    color: #FFF;
+  }
+
+  .dark-mode h2 {
+    color: #FFF;
+  }
+  /* Media queries */
+  @media (max-width: 768px) {
+  .container {
+  flex-direction: column;
+  }
+  .background {
+  height: 50vh;
+  }
+  .login-box {
+  width: 100%;
+  height: 50vh;
+  }
+  }
+
+  .dark-mode .btn {
+    color: white;
+  }
+
+  .dark-mode a {
+    color: #fff;
+  }
+
+  .login-box p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .animal-card img {
+    width: 500px;
+  }
+
+  .error-message {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #b13030;
+}
+
+.dark-mode .error-message {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fe6d5f;
+}
+
+.signup-link {
+  display: inline-block;
+  background-color: #673AB7;
+  color: #fff;
+  padding: 8px 17px;
+  border: none;
+  border-radius: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.signup-link:hover {
+  background-color: #0d8a6a;
+  }
