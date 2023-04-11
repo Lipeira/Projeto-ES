@@ -8,13 +8,14 @@
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
       	integrity="sha384-Qz5ksEiv9X5X0m2QJxMlvLPjzPFySw0MjKQlXpuPu/NtYkD9zvYtqcKuV+72jtWr"
       	crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-+EkRGPCBZ//XOg7tS+BrK+NJlNdwEiQfYP7Vzj4t/Ge7hh9toG/3K7ItmowqyitGRmVxLnjr0xEzK0jTCDZIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div class="container">
         <div class="login-box">
             <div class="accessibility">
-                <button id="accessibility-btn" class="btn-dark"><i class="fas fa-adjust"></i></button>
+                <button class="accessibility-btn"><i class="fas fa-moon"></i></button>
             </div>
             <h2>Login</h2>
             <form method="POST" action="{{ url_for('views.login') }}">
@@ -45,11 +46,12 @@
         <div class="background"></div>
     </div>
     <script>
-      $(document).ready(function() {
-          $('#accessibility-btn').click(function() {
+       $(document).ready(function() {
+          $('.accessibility-btn').click(function() {
               $('body').toggleClass('dark-mode');
           });
-      });
+      }); 
+
   </script>
   </body>
   </html>

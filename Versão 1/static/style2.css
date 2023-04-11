@@ -148,10 +148,7 @@
 
   /* Estilos para o botão de acessibilidade */
 .accessibility-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #fff;
+  background-color: #e7e7e7;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -163,10 +160,21 @@
   align-items: center;
   z-index: 99;
   }
+
+  .accessibility-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }
   
   .accessibility-btn i {
   font-size: 24px;
   }
+
+  .accessibility-btn:hover {
+    background-color: #1abc9c;
+    color:  white;
+    }
   
   /* Dark mode */
   .dark-mode {
@@ -280,6 +288,7 @@
 .signup-link {
   display: inline-block;
   background-color: #673AB7;
+  /* #1abc9c */
   color: #fff;
   padding: 8px 17px;
   border: none;
@@ -294,3 +303,4 @@
 .signup-link:hover {
   background-color: #0d8a6a;
   }
+
