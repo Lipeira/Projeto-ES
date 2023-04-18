@@ -5,40 +5,30 @@
 
 > De acordo com a Organização Mundial de Saúde (OMS), somente no Brasil, cerca de 30 milhões de animais estão abandonados, sendo aproximadamente 20 milhões de cães e 10 milhões de gatos. Em grandes metrópoles, para cada cinco habitantes há um cachorro. Desses, 10% estão abandonados (25 de mai. de 2022)
 
-## 🏹 Alguns links importantes
-
-*  Para acessar o Figma do Projeto (UI), *[Clique Aqui](https://www.figma.com/file/WQt0vSYlpgCy7tAJxBaBkr/Untitled?node-id=19-140&t=aJM6Si5DJetBYxu5-0)*
-
-##	✨ Apresentações do nosso projeto:
-
-* 💬 **ETAPA 1** (27/03) : Para acessar a apresentação do **STATUS REPORT** planejado para essa data acima, *[Clique Aqui](https://www.canva.com/design/DAFd3-qb92A/k-0rPFf4YmAYaVoamZkU9Q/edit)*
-
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
-* *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Adoção de animais de abrigo.`
-* *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como conectar abrigos de animais com potenciais adotantes?`
-* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais em situação de rua, que resume a essencial question e a big idea, temos: `Ajudar a encontrar um lar para cada animal de estimação de abrigo, reduzindo o número de animais abandonados`
+* *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Situação dos animais abandonados e abrigos.`
+* *Que questão essencial você propõe para o projeto?*:<br>Propomos como questão essencial: `Como auxiliar o projeto "Adote um Vira Lata" nos seus processos?`
+* *Como você transforma a essential question e a big idea em um desafio similar a uma chamada para a ação?*:<br>Como um dos challanges para ajudar os animais e o projeto, que resume a essencial question e a big idea, temos: `Criar soluções para o projeto "Adote um Vira Lata" visando gerar mais agilidade nos seus processos`
 
-* *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`- Como conectar abrigos e adotantes de forma eficaz?`<br>`- Como garantir que os adotantes são confiáveis?`<br>`- Como captar mais pessoas para utilizarem o aplicativo?`
+* *Que questões norteadoras você propõe para explorar e aprender mais sobre o desafio?*:<br>Questões-chaves: <br>`- Como entregar maior agilidade aos processos internos do projeto "Adote um Vira Lata"?`<br>`- Como garantir que a solução será sustentável no longo prazo?`<br>`- Como adaptar todo o funcionamento do projeto "Adote um Vira Lata" às novas soluções?`
 * *Quais atividades e recursos norteadores você sugere para responder às questões norteadoras?*: <br>`- Pesquisa com abrigos sobre o assunto` <br>
-`- Interface que conecta os dois lados da problemática` <br>
-`- Cadastro dos potenciais clientes adotantes` <br>
-`- Estratégia de marketing visando conscientização e aderência das pessoas ao projeto`
+`- Aplicação Web focada no gerenciamento de animais comunitários da UFPE` <br>
+`- Implementação da solução por etapas em acompanhamento de membros do projeto "Adote um Vira Lata"` <br>
+`- Garantir uma boa segurança do aplicativo e uma usabilidade intuitiva e replicável`
 
 * *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: <br> `- Metodologia Ágil (Iteração com o cliente)` <br> `- Experiência de usuário (UX/UI)` <br> `- MVP` <br> `- Teste de Software`
-* *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo que ajuda a promover a adoção de animais de abrigo, conectando abrigos de animais e potenciais adotantes em uma plataforma fácil de usar e interativa.`
-* *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com um potencial cliente para servir de ponto de partida.`
+* *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo web que seja capaz de realizar o cadastro de animais, criando um catálogo informacional de fácil editção e usabilidade.`
+* *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com responsáveis do projeto para o desenvolvimento ser sempre validado.`
 
 
 ### 👮 Ajustes e melhorias 
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Tarefa x
-- [ ] Tarefa y
-- [ ] Tarefa z
-- [ ] Tarefa w
-- [ ] Tarefa v
+- Melhora da usabilidade e de elementos de design.
+- Implementação do CRUD
+- Finalizar integração com o banco de dados
 
 ## ☕ Usando o Pets Save
 
