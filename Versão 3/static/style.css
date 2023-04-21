@@ -1,3 +1,5 @@
+/* Cards */
+
 /* Reset */
 * {
     box-sizing: border-box;
@@ -382,3 +384,107 @@
         font-weight: bold;
         color: white;
       }
+
+
+
+
+
+/* Paleta de cores do site */
+:root {
+  --cor-primaria: #000000;
+  --cor-secundaria: #000000;
+  --cor-fundo: #f8f9fa;
+  --cor-destaque: #414141; /* Nova cor de destaque */
+}
+
+/* Estilos para o painel à esquerda */
+.sidebar {
+  width: 200px;
+  height: 380px;
+  background-color: var(--cor-destaque); /* Cor de destaque */
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 10vh;
+  border-radius: 5px;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sidebar form {
+  margin-bottom: 20px;
+}
+
+.sidebar label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.sidebar select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background-color: var(--cor-fundo);
+  border: none;
+  border-radius: 4px;
+  color: var(--cor-secundaria);
+}
+
+.sidebar button[type="submit"] {
+  background-color: var(--cor-fundo);
+  color: var(--cor-primaria);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar button[type="submit"]:hover {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+}
+
+#animal-count {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+#count {
+  font-weight: bold;
+}
+
+/* Estilos para a tabela de animais */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+#animal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#animal-table th,
+#animal-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-fundo);
+}
+
+#animal-table th {
+  background-color: var(--cor-fundo);
+  font-weight: bold;
+  color: var(--cor-secundaria);
+}
+
+#animal-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+

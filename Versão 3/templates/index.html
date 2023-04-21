@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Fdk5O5ztyULntgYGpEofNyYjROKZbM2aqLR5n/Dgj+TWn5w5jJ8gFwtSNd1r2rXq3lZxGIPt03exbsimBjR1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ufVEIVl1TL/zqX9sW1UpD2M/F7bP+Jf0/Z7V8TCAawuT7Vp+W+NMU/2IYPQBEY9XJ" crossorigin="anonymous">
   </head>
   <body>
     <header class="header">
@@ -22,94 +24,139 @@
 
     </header>
     <main>
+
+      <!-- Barra de filtro -->
+
+      <div class="sidebar">
+        <h2><i class="fas fa-filter"></i>  Filtros</h2>
+        <form id="filter-form">
+          <label for="center-select">Centro:</label>
+          <select id="center-select">
+            <option value="all">Todos</option>
+            <option value="center1">CFCH</option>
+            <option value="center2">CAC</option>
+            <option value="center3">CIN</option>
+            <option value="center3">CCSA</option>
+            <option value="center3">CTG</option>
+          </select>
+          <label for="breed-select">Espécie:</label>
+          <select id="breed-select">
+            <option value="all">Todas</option>
+            <option value="breed1">Raça 1</option>
+            <option value="breed2">Raça 2</option>
+            <option value="breed3">Raça 3</option>
+          </select>
+          <label for="age-select">Idade:</label>
+          <select id="age-select">
+            <option value="all">Todas</option>
+            <option value="age1">Até 1 ano</option>
+            <option value="age2">1-3 anos</option>
+            <option value="age3">Acima de 3 anos</option>
+          </select>
+          <button type="submit">Filtrar</button>
+        </form>
+        <div id="animal-count">
+          Total de animais registrados: <span id="count">0</span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
       <div class="card-container">
         <div class="card">
-            <img src="https://petcaramelo.com/wp-content/uploads/2018/07/Maltes-cachorro.jpg" alt="Imagem de um animal">
+            <img src="https://cdn6.campograndenews.com.br/uploads/noticias/2021/10/18/616d9a5c81200.jpg" alt="Imagem de um animal">
             <div class="card-info">
-              <h2>Bruno</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Maltês</p>
-              <p>Idade: 4 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://cdn.folhape.com.br/upload/dn_arquivo/2020/11/cat-2068462-1920.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Sofia</h2>
+              <h2>Alfredo</h2>
               <p>Espécie: Gato</p>
-              <p>Raça: Siamês</p>
-              <p>Idade: 2 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Cacau</h2>
-              <p>Espécie: Coelho</p>
-              <p>Raça: Lionhead</p>
-              <p>Idade: 1 ano</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Rex</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Golden Retriever</p>
+              <p>Raça: Vira-lata</p>
               <p>Idade: 3 anos</p>
             </div>
           </div>
           <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <img src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/cachorro-comunitario.jpg" alt="Imagem de um animal">
             <div class="card-info">
-              <h2>Gabi</h2>
-              <p>Espécie: Gato</p>
-              <p>Raça: Persa</p>
-              <p>Idade: 5 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Boris</h2>
+              <h2>Sofia</h2>
               <p>Espécie: Cachorro</p>
-              <p>Raça: Bulldog Francês</p>
+              <p>Raça: Vira-lata</p>
               <p>Idade: 2 anos</p>
             </div>
           </div>
           <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <img src="https://pbs.twimg.com/profile_images/1594458309314101252/okfZc3eq_400x400.jpg" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Cacau</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Husky Siberiano</p>
+              <p>Idade: 3 meses</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://www.portaldodog.com.br/cachorros/wp-content/uploads/2015/11/alexandre-caocidadao-261115-tn.jpg" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Rex</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Vira-lata</p>
+              <p>Idade: 4 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0Ysts-zCVVco7vK3kcsbU2isvuULABr-Pg&usqp=CAU" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Gabi</h2>
+              <p>Espécie: Gato</p>
+              <p>Raça: Pelo Curto Brasileiro</p>
+              <p>Idade: 5 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/06/cachorro-comunita%CC%81rio.jpeg?resize=626%2C417&ssl=1" alt="Imagem de um animal">
+            <div class="card-info">
+              <h2>Boris</h2>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Vira-lata</p>
+              <p>Idade: 2 anos</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://s2.glbimg.com/-f5QARU7O9caIkJ4G8VGQsFTkyo=/0x0:718x564/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/Q/c/A65aitR8O15xJIC5MyDg/cachorrinho.jpg" alt="Imagem de um animal">
             <div class="card-info">
               <h2>Luna</h2>
-              <p>Espécie: Gato</p>
-              <p>Raça: Maine Coon</p>
+              <p>Espécie: Cachorro</p>
+              <p>Raça: Vira-lata</p>
               <p>Idade: 1 ano</p>
             </div>
           </div>
           <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <img src="https://www.efecadepatos.com.br/wp-content/uploads/2014/06/PAPAGAIO-2.jpg" alt="Imagem de um animal">
             <div class="card-info">
               <h2>Max</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Yorkshire Terrier</p>
-              <p>Idade: 6 anos</p>
+              <p>Espécie: Papagaio</p>
+              <p>Raça: Papagaio-verdadeiro</p>
+              <p>Idade: 1 ano</p>
             </div>
           </div>
           <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRtTqx3z34MOBic2SYHjPjjmpqJubQYsB2RCr21nXOsNcdWNI2cie0mwWXWHDXMb_20uA&usqp=CAU" alt="Imagem de um animal">
             <div class="card-info">
-              <h2>Pretinho</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Yorkshire Terrier</p>
-              <p>Idade: 6 anos</p>
+              <h2>Jhonny</h2>
+              <p>Espécie: Coelho</p>
+              <p>Raça: Mini Lop</p>
+              <p>Idade: 1 ano</p>
             </div>
           </div>
           <div class="card">
-            <img src="https://picsum.photos/200" alt="Imagem de um animal">
+            <img src="https://repositorio.santamaria.rs.gov.br/midia/2013/09/F18-19088.jpg" alt="Imagem de um animal">
             <div class="card-info">
-              <h2>Pretinho</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Yorkshire Terrier</p>
+              <h2>Böhr</h2>
+              <p>Espécie: Cavalo</p>
+              <p>Raça: Vira-lata</p>
               <p>Idade: 6 anos</p>
             </div>
           </div>
@@ -132,7 +179,7 @@
     <div class="modal-content">
       <span class="close" onclick="hideAddForm()">&times;</span>
       <h2>Cadastro de Animal</h2>
-      <form enctype="multipart/form-data" id="animal-form">
+      <form enctype="multipart/form-data" id="animal-form" method="POST">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
         
@@ -236,6 +283,8 @@ document.querySelector('.overlay').addEventListener('click', () => {
 
 
 
+<!-- Script mostrar tela  -->
+
 <script>
 
 const addBtn = document.querySelector(".add-button");
@@ -268,6 +317,8 @@ modal.addEventListener("click", function(event) {
 </script>
 
 
+
+<!-- Animais filtrados remove -->
 
 <script>
 
@@ -350,10 +401,23 @@ searchResults.appendChild(noResults);
 
 </script>
 
-
 <div id="logo-container">
   <img src="/static/images/logoufpe.png" alt="Logo UFPE">
 </div>
 
+
+<script>
+  // Coloque o código JavaScript ou jQuery aqui para atualizar a quantidade de cards registrados
+  // Exemplo com JavaScript puro:
+  var totalAnimaisRegistrados = document.getElementsByClassName('card').length;
+  document.getElementById('count').textContent = totalAnimaisRegistrados;
+  
+  // Exemplo com jQuery:
+  // var totalAnimaisRegistrados = 5; // Substitua esse valor pelo total de cards registrados
+  // $('#count').text(totalAnimaisRegistrados);
+</script>
+
 </body>
 </html>
+
+

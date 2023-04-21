@@ -17,12 +17,36 @@ with connection:
         if not table_exists:
             cursor.execute("CREATE TABLE usuarios (nome TEXT, email TEXT, senha TEXT);")
 
+with connection:
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT EXISTS(SELECT 1 FROM information_schema.tables WHERE table_name = 'animais');")
+        table_exists = cursor.fetchone()[0]
+        if not table_exists:
+            cursor.execute("CREATE TABLE animais(nome VARCHAR(255) NOT NULL,especie VARCHAR(255) NOT NULL,raca VARCHAR(255) NOT NULL,idade INTEGER NOT NULL,descricao TEXT NOT NULL,imagem BYTEA);")
 
 views = Blueprint("views", __name__)
 
-@views.route('/home/<username>')
+@views.route('/home/<username>', methods=['GET', 'POST'])
 def home(username):
-    return render_template('index.html',name_login = username)
+    if request.method == 'POST':
+        # Obtenha os dados do formulário
+        nome = request.form['name']
+        especie = request.form['species']
+        raca = request.form['breed']
+        idade = request.form['age']
+        descricao = request.form['description']
+        imagem = request.files['image'].read()
+
+        # Insira os dados no banco de dados
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute('''
+                    INSERT INTO animais (nome, especie, raca, idade, descricao, imagem)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    ''', (nome, especie, raca, idade, descricao, psycopg2.Binary(imagem)))
+
+    return render_template('index.html', name_login=username)
+
 
 
 @views.route('/', methods=['GET', 'POST'])

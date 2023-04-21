@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, blueprints, Blueprint
 from views import views
+import psycopg2
 
 app = Flask(__name__)
 
