@@ -18,7 +18,7 @@
 `- Garantir uma boa segurança do aplicativo e uma usabilidade intuitiva e replicável`
 
 * *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: <br> `- Metodologia Ágil (Iteração com o cliente)` <br> `- Experiência de usuário (UX/UI)` <br> `- MVP` <br> `- Teste de Software`
-* *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo web que seja capaz de realizar o cadastro de animais, criando um catálogo informacional de fácil editção e usabilidade.`
+* *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo web que seja capaz de realizar o cadastro de animais, criando um catálogo informacional de fácil edição e usabilidade.`
 * *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com responsáveis do projeto para o desenvolvimento ser sempre validado.`
 
 
