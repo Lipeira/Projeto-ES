@@ -156,6 +156,5 @@ def remove_animal():
         with connection.cursor() as cursor:
             cursor.execute("DELETE FROM animal WHERE id = %s", (animal_id,))
 
-    connection.close() # fechar conexão
 
-    return redirect(url_for('views.home', username='seu_usuario'))
+    return redirect(url_for('views.home', username='ufpe'))

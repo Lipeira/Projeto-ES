@@ -122,7 +122,7 @@
 /* Movendo os botões para o canto inferior esquerdo */
 .fixed-buttons {
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     left: 20px;
   }
   
@@ -524,4 +524,77 @@
 
 #animal-list li:hover {
   background-color: #ccc;
+}
+
+/* Estilos do rodapé */
+
+/* Rodapé */
+footer {
+  background-color: #322f37; /* mistura de roxo e cinza */
+  color: #fff;
+  padding: 40px 0;
+  font-size: 14px;
+  display: none;
+}
+
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 0 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  color: #6c5b7b;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #6c5b7b;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #b3b3b3;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
 }

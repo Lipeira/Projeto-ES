@@ -33,23 +33,23 @@
           <label for="center-select">Centro:</label>
           <select id="center-select">
             <option value="all">Todos</option>
-            <option value="center1">CFCH</option>
-            <option value="center2">CAC</option>
-            <option value="center3">CIN</option>
-            <option value="center3">CCSA</option>
-            <option value="center3">CTG</option>
+            <option value="CFCH">CFCH</option>
+            <option value="CAC">CAC</option>
+            <option value="CIN">CIN</option>
+            <option value="CCSA">CCSA</option>
+            <option value="CTG">CTG</option>
           </select>
           <label for="breed-select">Espécie:</label>
           <select id="breed-select">
             <option value="all">Todas</option>
-            <option value="breed1">Cachorro</option>
-            <option value="breed2">Gato</option>
-            <option value="breed3">Outro</option>
+            <option value="Cachorro">Cachorro</option>
+            <option value="Gato">Gato</option>
+            <option value="Outro">Outro</option>
           </select>
           <label for="age-select">Idade:</label>
           <select id="age-select">
             <option value="all">Todas</option>
-            <option value="age1">1 ano</option>
+            <option value="age1">Até 1 ano</option>
             <option value="age2">1-10 anos</option>
             <option value="age3">Acima de 10 anos</option>
           </select>
@@ -145,12 +145,10 @@
         <!-- Itens da lista serão adicionados aqui dinamicamente -->
       </ul>
       
-      <button id="remove-animal-btn" onclick="removeAnimal()">Remover</button>
+      <button id="remove-animal-btn">Remover</button>
     </form>
   </div>
 </div>
-
-  
 
     <!-- Adicione um elemento para a nova tela com fundo semi-transparente -->
     <div class="overlay"></div>
@@ -286,7 +284,7 @@ modal.addEventListener("click", function(event) {
         let isAgeMatch = age === "all";
 
         if (age === "age1") {
-          isAgeMatch = cardAge === 1;
+          isAgeMatch = cardAge <= 1;
         } else if (age === "age2") {
           isAgeMatch = cardAge > 1 && cardAge <= 10;
         } else if (age === "age3") {
@@ -368,38 +366,79 @@ modal.addEventListener("click", function(event) {
   }
   
 
-  function removeAnimal() {
-        const animalId = document.getElementById("search").value;
-        const url = "/remove_animal";
-        const data = { "id": animalId };
-        fetch(url, {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => {
-            if (response.redirected) {
-                window.location.reload(); // recarregar a página
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao remover animal:", error);
-        });
-    }
 
 
+  document.querySelector("#remove-animal-btn").addEventListener("click", function(event) {
+    event.preventDefault();
 
+    let searchInput = document.getElementById('search');
+    let animalId = searchInput.dataset.id;
+
+    // Enviar uma requisição AJAX para a rota /remove_animal
+    fetch("/remove_animal", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: animalId
+      })
+    })
+    .then(response => {
+      if (response.status === 200) {
+        // Redirecione para a página home
+        window.location.href = "/home/ufpe";
+      } else {
+        // Exiba uma mensagem de erro
+        console.error("Erro ao remover animal.");
+      }
+    })
+    .catch(error => {
+      console.error("Erro ao remover animal:", error);
+    });
+  });
 
   </script>
 
 
 
 
-
+<footer>
+  <div class="footer-info">
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Política do Site</h3>
+      <p>
+        Nós nos preocupamos com a segurança e bem-estar dos animais. Para saber mais sobre nossa política, <a href="#">clique aqui</a>.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h3>Sites Interessantes e de Emergência</h3>
+      <ul>
+        <li><a href="#">ONG Amor Animal</a></li>
+        <li><a href="#">SOS Animais</a></li>
+        <li><a href="#">Emergência Veterinária</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    &copy; 2023 - Todos os direitos reservados.
+  </div>
+</footer>
 
 
 
 </body>
+
+
+
+
 </html>
