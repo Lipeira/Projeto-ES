@@ -29,7 +29,7 @@ with connection:
         cursor.execute("""
 
             CREATE TABLE IF NOT EXISTS animal (
-            numero SERIAL PRIMARY KEY,
+            id SERIAL PRIMARY KEY,
             nome VARCHAR(255) NOT NULL,
             especie VARCHAR(255) NOT NULL,
             raca VARCHAR(255) NOT NULL,
@@ -37,11 +37,11 @@ with connection:
             descricao TEXT NOT NULL,
             imagem VARCHAR(255) NOT NULL,
             local_circulacao VARCHAR(255) NOT NULL);
+            
         """)
 
         # Confirma as alterações no banco de dados
         connection.commit()
-
 
 
 views = Blueprint("views", __name__)
@@ -50,7 +50,6 @@ views = Blueprint("views", __name__)
 def home(username):
     if request.method == 'POST':
         # Obtenha os dados do formulário
-        identificador = request.form['id']
         nome = request.form['name']
         especie = request.form['species']
         raca = request.form['breed']
@@ -61,25 +60,27 @@ def home(username):
         imagem = request.files['image']  # Obtém o arquivo de imagem do formulário
         imagem.save('static/images/' + imagem.filename)  # Salva a imagem no diretório local
         caminho_imagem = 'images/' + imagem.filename  # Obtém o caminho completo do arquivo salvo
-        
-
 
         # Insira os dados no banco de dados
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute('''
-                    INSERT INTO animal (numero,nome, especie, raca, idade, descricao,imagem,local_circulacao)
-                    VALUES (%s, %s, %s, %s, %s, %s,%s,%s)
-                    ''', (identificador,nome, especie, raca, idade, descricao,caminho_imagem,centro))
+                    INSERT INTO animal (nome, especie, raca, idade, descricao, imagem, local_circulacao)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    ''', (nome, especie, raca, idade, descricao, caminho_imagem, centro))
 
 
     with connection:
         with connection.cursor() as cursor:
             # Execute uma consulta SQL para obter os dados da tabela 'animal'
-                cursor.execute("SELECT numero, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
+                cursor.execute("SELECT id, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
                 animal = cursor.fetchall()  # Obtém todos os registros como uma lista de tuplas
+                print(animal)
+
 
     return render_template('index.html', name_login=username, animal = animal)
+
+
 
 
 
@@ -136,3 +137,25 @@ def singup():
         return redirect(url_for('views.home',username=username))
     
     return render_template('index3.html')
+
+
+@views.route('/fetch_animals', methods=['GET'])
+def fetch_animals():
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT id, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
+            animal = cursor.fetchall()
+    return jsonify(animal)
+
+@views.route('/remove_animal', methods=['POST'])
+def remove_animal():
+    data = request.get_json()
+    animal_id = data['id']
+
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute("DELETE FROM animal WHERE id = %s", (animal_id,))
+
+    connection.close() # fechar conexão
+
+    return redirect(url_for('views.home', username='seu_usuario'))
