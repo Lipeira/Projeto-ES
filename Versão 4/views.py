@@ -5,6 +5,11 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
 import psycopg2
 
+# Registrar o filtro na environment do Jinja2
+
+
+
+
 #CONEXÃO BANCO DE DADOS
 POSTGRESQL_URI = "postgres://rrsllcdu:VErRUumdSLoypdkk5nLts9HolGC0xnYA@babar.db.elephantsql.com/rrsllcdu"
 connection = psycopg2.connect(POSTGRESQL_URI)
@@ -17,12 +22,27 @@ with connection:
         if not table_exists:
             cursor.execute("CREATE TABLE usuarios (nome TEXT, email TEXT, senha TEXT);")
 
+
 with connection:
     with connection.cursor() as cursor:
-        cursor.execute("SELECT EXISTS(SELECT 1 FROM information_schema.tables WHERE table_name = 'animais');")
-        table_exists = cursor.fetchone()[0]
-        if not table_exists:
-            cursor.execute("CREATE TABLE animais(nome VARCHAR(255) NOT NULL,especie VARCHAR(255) NOT NULL,raca VARCHAR(255) NOT NULL,idade INTEGER NOT NULL,descricao TEXT NOT NULL,imagem BYTEA);")
+        # Cria tabela Centro
+        cursor.execute("""
+
+            CREATE TABLE IF NOT EXISTS animal (
+            numero SERIAL PRIMARY KEY,
+            nome VARCHAR(255) NOT NULL,
+            especie VARCHAR(255) NOT NULL,
+            raca VARCHAR(255) NOT NULL,
+            idade INTEGER NOT NULL,
+            descricao TEXT NOT NULL,
+            imagem VARCHAR(255) NOT NULL,
+            local_circulacao VARCHAR(255) NOT NULL);
+        """)
+
+        # Confirma as alterações no banco de dados
+        connection.commit()
+
+
 
 views = Blueprint("views", __name__)
 
@@ -30,22 +50,36 @@ views = Blueprint("views", __name__)
 def home(username):
     if request.method == 'POST':
         # Obtenha os dados do formulário
+        identificador = request.form['id']
         nome = request.form['name']
         especie = request.form['species']
         raca = request.form['breed']
         idade = request.form['age']
         descricao = request.form['description']
-        imagem = request.files['image'].read()
+        centro = request.form['center']
+
+        imagem = request.files['image']  # Obtém o arquivo de imagem do formulário
+        imagem.save('static/images/' + imagem.filename)  # Salva a imagem no diretório local
+        caminho_imagem = 'images/' + imagem.filename  # Obtém o caminho completo do arquivo salvo
+        
+
 
         # Insira os dados no banco de dados
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute('''
-                    INSERT INTO animais (nome, especie, raca, idade, descricao, imagem)
-                    VALUES (%s, %s, %s, %s, %s, %s)
-                    ''', (nome, especie, raca, idade, descricao, psycopg2.Binary(imagem)))
+                    INSERT INTO animal (numero,nome, especie, raca, idade, descricao,imagem,local_circulacao)
+                    VALUES (%s, %s, %s, %s, %s, %s,%s,%s)
+                    ''', (identificador,nome, especie, raca, idade, descricao,caminho_imagem,centro))
 
-    return render_template('index.html', name_login=username)
+
+    with connection:
+        with connection.cursor() as cursor:
+            # Execute uma consulta SQL para obter os dados da tabela 'animal'
+                cursor.execute("SELECT numero, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
+                animal = cursor.fetchall()  # Obtém todos os registros como uma lista de tuplas
+
+    return render_template('index.html', name_login=username, animal = animal)
 
 
 

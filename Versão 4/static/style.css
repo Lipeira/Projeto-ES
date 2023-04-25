@@ -488,3 +488,20 @@
   background-color: #f8f9fa;
 }
 
+  /* Estilo para o botão Cadastrar */
+  #animal-form button[type="submit"] {
+    background-color: #673AB7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  /* Estilo para a lista de seleção de centro */
+  #center {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }

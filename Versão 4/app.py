@@ -3,7 +3,6 @@ from views import views
 import psycopg2
 
 app = Flask(__name__)
-
 app.register_blueprint(views, url_prefix="/")
 
 if __name__ == '__main__':

@@ -42,16 +42,16 @@
           <label for="breed-select">Espécie:</label>
           <select id="breed-select">
             <option value="all">Todas</option>
-            <option value="breed1">Raça 1</option>
-            <option value="breed2">Raça 2</option>
-            <option value="breed3">Raça 3</option>
+            <option value="breed1">Cachorro</option>
+            <option value="breed2">Gato</option>
+            <option value="breed3">Outro</option>
           </select>
           <label for="age-select">Idade:</label>
           <select id="age-select">
             <option value="all">Todas</option>
-            <option value="age1">Até 1 ano</option>
-            <option value="age2">1-3 anos</option>
-            <option value="age3">Acima de 3 anos</option>
+            <option value="age1">1 ano</option>
+            <option value="age2">1-10 anos</option>
+            <option value="age3">Acima de 10 anos</option>
           </select>
           <button type="submit">Filtrar</button>
         </form>
@@ -61,107 +61,22 @@
       </div>
 
 
-
-
-
-
-
-
-
-
       <div class="card-container">
+        {% for animal in animal %}
         <div class="card">
-            <img src="https://cdn6.campograndenews.com.br/uploads/noticias/2021/10/18/616d9a5c81200.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Alfredo</h2>
-              <p>Espécie: Gato</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 3 anos</p>
-            </div>
+          <div class="card-info">
+            <img src="{{ url_for('static', filename=animal[6]) }}" alt="{{ animal[1] }} Imagem" height="150" width="150">
+              <h2>{{ animal[1] }}</h2>
+              <p>Espécie: {{ animal[2] }}</p>
+              <p>Raça: {{ animal[3] }}</p>
+              <p>Idade: {{ animal[4] }} anos</p>
+              <p>ID: {{ animal[0] }}</p>
           </div>
-          <div class="card">
-            <img src="https://www.petz.com.br/blog/wp-content/uploads/2021/05/cachorro-comunitario.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Sofia</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 2 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://pbs.twimg.com/profile_images/1594458309314101252/okfZc3eq_400x400.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Cacau</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Husky Siberiano</p>
-              <p>Idade: 3 meses</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://www.portaldodog.com.br/cachorros/wp-content/uploads/2015/11/alexandre-caocidadao-261115-tn.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Rex</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 4 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0Ysts-zCVVco7vK3kcsbU2isvuULABr-Pg&usqp=CAU" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Gabi</h2>
-              <p>Espécie: Gato</p>
-              <p>Raça: Pelo Curto Brasileiro</p>
-              <p>Idade: 5 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/06/cachorro-comunita%CC%81rio.jpeg?resize=626%2C417&ssl=1" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Boris</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 2 anos</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://s2.glbimg.com/-f5QARU7O9caIkJ4G8VGQsFTkyo=/0x0:718x564/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/Q/c/A65aitR8O15xJIC5MyDg/cachorrinho.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Luna</h2>
-              <p>Espécie: Cachorro</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 1 ano</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://www.efecadepatos.com.br/wp-content/uploads/2014/06/PAPAGAIO-2.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Max</h2>
-              <p>Espécie: Papagaio</p>
-              <p>Raça: Papagaio-verdadeiro</p>
-              <p>Idade: 1 ano</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRtTqx3z34MOBic2SYHjPjjmpqJubQYsB2RCr21nXOsNcdWNI2cie0mwWXWHDXMb_20uA&usqp=CAU" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Jhonny</h2>
-              <p>Espécie: Coelho</p>
-              <p>Raça: Mini Lop</p>
-              <p>Idade: 1 ano</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://repositorio.santamaria.rs.gov.br/midia/2013/09/F18-19088.jpg" alt="Imagem de um animal">
-            <div class="card-info">
-              <h2>Böhr</h2>
-              <p>Espécie: Cavalo</p>
-              <p>Raça: Vira-lata</p>
-              <p>Idade: 6 anos</p>
-            </div>
-          </div>
-          
+        </div>
+        {% endfor %}
       </div>
+
+
       <div class="pagination">
         <button class="prev-button"><i class="fas fa-chevron-left"></i> Anterior</button>
         <button class="next-button">Próxima <i class="fas fa-chevron-right"></i></button>
@@ -180,26 +95,43 @@
       <span class="close" onclick="hideAddForm()">&times;</span>
       <h2>Cadastro de Animal</h2>
       <form enctype="multipart/form-data" id="animal-form" method="POST">
+
+        <label for="id">Numero Id:</label>
+        <input type="text" id="id" name="id" required>
+
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
-        
+      
         <label for="species">Espécie:</label>
         <input type="text" id="species" name="species" required>
-        
+      
         <label for="breed">Raça:</label>
         <input type="text" id="breed" name="breed" required>
-        
+      
         <label for="age">Idade:</label>
         <input type="number" id="age" name="age" required>
-        
+      
         <label for="description">Descrição:</label>
         <textarea id="description" name="description" rows="3" required></textarea>
-        
+      
         <label for="image">Imagem:</label>
-        <input type="file" id="image" name="image" accept="image/*">
-        
+        <input type="file" id="image" name="image" accept="image/*" required>
+      
+        <label for="center">Centro:</label>
+        <select id="center" name="center" style="width: 100%;" required>
+          <option value="CFCH">CFCH</option>
+          <option value="CAC">CAC</option>
+          <option value="CIN">CIN</option>
+          <option value="CIN">CCSA</option>
+          <option value="CTG">CTG</option>
+
+          <!-- Adicione mais opções de centros aqui -->
+        </select>
+      
+      
         <button type="submit">Cadastrar</button>
       </form>
+      
     </div>
   </div>
 
@@ -212,9 +144,9 @@
           <label for="search">Buscar animal:</label>
           <input type="text" id="search" name="search" required>
           
-          <div id="search-results">
-            <!-- Resultados da busca serão adicionados aqui dinamicamente -->
-          </div>
+          <ul id="animal-list">
+            <!-- Itens da lista serão adicionados aqui dinamicamente -->
+          </ul>
           
           <button type="submit">Remover</button>
         </form>
@@ -319,87 +251,6 @@ modal.addEventListener("click", function(event) {
 
 
 <!-- Animais filtrados remove -->
-
-<script>
-
-/* Coloque os animais testes, ou anexe À API ou DATABASE */
-const animals = [];
-
-// Seleciona todos os elementos H2 dentro dos cards de animais
-const animalTitles = document.querySelectorAll('.card h2');
-
-// Itera sobre os elementos H2 e adiciona seus valores à lista de animais
-animalTitles.forEach((title) => {
-  animals.push(title.textContent);
-});
-
-
-
-// Seleciona o input de busca
-const searchInput = document.getElementById('search');
-
-// Adiciona o evento "keyup" no input de busca
-searchInput.addEventListener('keyup', (event) => {
-  // Obtém a string de busca digitada pelo usuário
-  const searchString = event.target.value.toLowerCase();
-  
-  // Seleciona a div que irá conter os resultados da busca
-  const searchResults = document.getElementById('search-results');
-  
-  // Cria uma lista de animais correspondente à busca
-  const filteredAnimals = animals.filter((animal) => {
-    return animal.toLowerCase().includes(searchString);
-  });
-  
-  // Remove todos os resultados anteriores da div "search-results"
-  searchResults.innerHTML = '';
-  
-  // Adiciona os novos resultados na div "search-results"
-  if (filteredAnimals.length > 0) {
-    filteredAnimals.forEach((animal) => {
-      const resultItem = document.createElement('div');
-      resultItem.classList.add('result-item');
-      resultItem.textContent = animal;
-      
-      // Adiciona evento "click" no resultado da busca
-      resultItem.addEventListener('click', () => {
-        searchInput.value = animal;
-        searchResults.innerHTML = '';
-      });
-      
-      searchResults.appendChild(resultItem);
-    });
-  } else {
-    const noResults = document.createElement('div');
-    noResults.classList.add('no-results');
-    noResults.textContent = 'Nenhum animal encontrado';
-    searchResults.appendChild(noResults);
-  }
-});
-
-
-if (filteredAnimals.length > 0) {
-filteredAnimals.forEach((animal) => {
-const resultItem = document.createElement('div');
-resultItem.classList.add('result-item');
-resultItem.textContent = animal;
-// Adiciona evento "click" no resultado da busca
-resultItem.addEventListener('click', () => {
-  searchInput.value = animal;
-  searchResults.innerHTML = '';
-});
-
-searchResults.appendChild(resultItem);
-});
-} else {
-const noResults = document.createElement('div');
-noResults.classList.add('no-results');
-noResults.textContent = 'Nenhum animal encontrado';
-searchResults.appendChild(noResults);
-}
-
-
-</script>
 
 <div id="logo-container">
   <img src="/static/images/logoufpe.png" alt="Logo UFPE">
