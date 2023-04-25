@@ -96,33 +96,11 @@
     background-color: #f6f6f6;
   }
   
-  /* Pagination */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-  }
-  
-  .prev-button, .next-button {
-    background-color: #673AB7;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0 10px;
-    padding: 10px;
-  }
-  
-  .prev-button:hover, .next-button:hover {
-    background-color: #512DA8;
-  }
-  
   /* Fixed Buttons */
 /* Movendo os botões para o canto inferior esquerdo */
 .fixed-buttons {
     position: fixed;
-    bottom: 60px;
+    bottom: 20px;
     left: 20px;
   }
   
@@ -516,7 +494,7 @@
 
 #animal-list li {
   background-color: #f0f0f0;
-  padding: 5px 10px;
+  padding: 5px 30vw;
   margin-bottom: 2px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -534,7 +512,6 @@ footer {
   color: #fff;
   padding: 40px 0;
   font-size: 14px;
-  display: none;
 }
 
 
