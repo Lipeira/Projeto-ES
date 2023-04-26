@@ -18,26 +18,8 @@
 `- Garantir uma boa segurança do aplicativo e uma usabilidade intuitiva e replicável`
 
 * *Quais os fundamentos que você aprendeu que nortearão as hipóteses de solução?*: <br> `- Metodologia Ágil (Iteração com o cliente)` <br> `- Experiência de usuário (UX/UI)` <br> `- MVP` <br> `- Teste de Software`
-* *Que solução você sugere para ser desenvolvida?*: <br>`Um aplicativo web que seja capaz de realizar o cadastro de animais, criando um catálogo informacional de fácil edição e usabilidade.`
+* *Que solução você sugere para ser desenvolvida?*: <br>`Uma solução web que agiliza os processos de gestão por meio de um CRUD.`
 * *Como você testará a solução no mundo real?*: <br>`As ideias para teste são:` <br>`1: MVP, para validar a efetividade da solução.` <br>`2: Contato direto com responsáveis do projeto para o desenvolvimento ser sempre validado.`
-
-
-### 👮 Ajustes e melhorias 
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
-- Melhora da usabilidade e de elementos de design.
-- Implementação do CRUD
-- Finalizar integração com o banco de dados
-
-## ☕ Usando o Pets Save
-
-Para usar o site do **Pets Save**, siga estas etapas:
-
-```
-<exemplo_de_uso>
-```
-
 
 ## 📫 Contribuindo para <nome_do_projeto>
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
