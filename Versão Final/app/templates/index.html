@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animais Comunitários</title>
+    <title>Cards</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Fdk5O5ztyULntgYGpEofNyYjROKZbM2aqLR5n/Dgj+TWn5w5jJ8gFwtSNd1r2rXq3lZxGIPt03exbsimBjR1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,7 +13,7 @@
   </head>
   <body>
     <header class="header">
-        <h1><i class="fas fa-paw"></i> Animais</h1>
+        <h1><i class="fas fa-paw"></i>Pets Save</h1>
       <div class="welcome">
         Seja Bem-vindo!
       </div>
@@ -89,19 +89,23 @@
   });
 </script>
 
-    <div class="card-container">
-      {% for a in animal %}
-      <div class="card" data-id="{{ a[0] }}" data-species="{{ a[2] }}" data-center="{{a[6]}}" data-sexo = "{{a[7]}}" data-age="{{ a[3] }}" data-description="{{ a[4] }}" data-image="{{ url_for('static', filename=a[5]) }}" id="animal-{{ a[0] }}">
-        <div class="card-info">
-          <img src="{{ url_for('static', filename=a[5]) }}" alt="{{ a[1] }} Imagem" height="150" width="150">
-          <h2>{{ a[1] }}</h2>
-          <p>Espécie: {{ a[2] }}</p>
-          <p>Sexo: {{ a[7] }}</p>
-          <p>Idade: {{ a[3] }} anos</p>
-        </div>
-      </div>
-      {% endfor %}
+<div class="card-container">
+  {% for a in animal %}
+  <div class="card" data-id="{{ a[0] }}" data-species="{{ a[2] }}" data-center="{{a[6]}}" data-sexo="{{a[7]}}" data-age="{{ a[3] }}" data-description="{{ a[4] }}" data-image="{{ url_for('static', filename=a[5]) }}" id="animal-{{ a[0] }}">
+    <div class="card-info">
+      <img src="{{ url_for('static', filename=a[5]) }}" alt="{{ a[1] }} Imagem" height="150" width="150">
+      <h2>{{ a[1] }}</h2>
+      <p>Espécie: {{ a[2] }}</p>
+      <p>Sexo: {{ a[7] }}</p>
+      <p>Idade: {{ a[3] }} anos</p>
     </div>
+    <button class="update-button" data-id="{{ a[0] }}">
+      <i class="fas fa-pencil-alt"></i>
+    </button>    
+  </div>
+  {% endfor %}
+</div>
+
 
     </main>
     
@@ -219,10 +223,7 @@
             </div>
           </div>
           <p class="animal-description">Tommy é um cachorro de personalidade marcante, sua simpatia é contagiante e ele adora estar perto de pessoas e outros cães. Com seus 5 anos de idade, ele tem muita energia e sempre está pronto para brincar e correr.</p>
-        </div>
-        <button id= 'update-button' class="update-button">
-          <i class="fas fa-pencil-alt"></i>
-        </button>        
+        </div>     
     </div>
 </div>  
 
@@ -530,8 +531,7 @@ modal.addEventListener("click", function(event) {
 </footer>
 
 
-
-<!-- <script>
+<script>
 function showUpdateForm(card, isUpdate = false) {
   const addFormModal = document.getElementById('add-form-modal');
   const animalForm = document.getElementById('animal-form');
@@ -572,9 +572,18 @@ function showUpdateForm(card, isUpdate = false) {
   addFormModal.style.display = 'block';
 }
 
-// Atualize o event listener para lidar com múltiplos cards
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('click', () => {
+// Altere o event listener para lidar com múltiplos botões de atualização
+document.querySelectorAll('.update-button').forEach((updateButton) => {
+  updateButton.addEventListener('click', (event) => {
+    // Previna o comportamento padrão do botão
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Obtenha o ID do card relacionado ao botão de atualização
+    const cardId = updateButton.getAttribute('data-id');
+    const card = document.getElementById(`animal-${cardId}`);
+
+    // Chame a função showUpdateForm
     showUpdateForm(card, true);
   });
 });
@@ -582,7 +591,10 @@ document.querySelectorAll('.card').forEach((card) => {
 const animalForm = document.getElementById('animal-form');
 animalForm.setAttribute('action', '/update_animal');
 
-</script> -->
+</script>
+
+
+
 
 
 </body>

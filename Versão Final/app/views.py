@@ -171,7 +171,7 @@ def get_animal(animal_id):
 @views.route('/update_animal', methods=['POST'])
 def update_animal():
     # Obtenha os dados do formulário
-    animal_id = request.form['id']
+    animal_id = request.form.get('id')
     nome = request.form['name']
     especie = request.form['species']
     idade = request.form['age']
@@ -183,13 +183,23 @@ def update_animal():
     imagem.save('static/images/' + imagem.filename)  # Salva a imagem no diretório local
     caminho_imagem = 'images/' + imagem.filename  # Obtém o caminho completo do arquivo salvo
 
-    # Atualize os dados no banco de dados
-    with connection:
-        with connection.cursor() as cursor:
-            cursor.execute('''
-                UPDATE animal
-                SET nome = %s, especie = %s, idade = %s, descricao = %s, imagem = %s, local_circulacao = %s, sexo = %s
-                WHERE id = %s
-            ''', (nome, especie, idade, descricao, caminho_imagem, centro, sexo, animal_id))
+    if animal_id is None:
+        # Insira os dados no banco de dados
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute('''
+                    INSERT INTO animal (nome, especie, idade, descricao, imagem, local_circulacao, sexo)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                ''', (nome, especie, idade, descricao, caminho_imagem, centro, sexo))
+    else:
+        # Atualize os dados no banco de dados
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute('''
+                    UPDATE animal
+                    SET nome = %s, especie = %s, idade = %s, descricao = %s, imagem = %s, local_circulacao = %s, sexo = %s
+                    WHERE id = %s
+                ''', (nome, especie, idade, descricao, caminho_imagem, centro, sexo, animal_id))
+
 
     return redirect(url_for('views.home', username='ufpe'))

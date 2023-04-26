@@ -628,9 +628,7 @@ footer {
 
 /* Estilos do botão de atualização */
 .update-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  display: inline-block;
   background-color: #512DA8;
   color: #ffffff;
   border: none;
@@ -638,11 +636,16 @@ footer {
   padding: 8px 12px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px; /* Adicione margem para separá-lo de outros elementos */
+  text-transform: uppercase; /* Letras maiúsculas para destacar o botão */
+  letter-spacing: 1px; /* Espaçamento entre letras para melhor legibilidade */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para adicionar profundidade */
 }
 
 .update-button:hover {
   background-color: #3c2180;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra maior no hover para efeito elevado */
 }
 
 #remove-animal-btn{
