@@ -32,11 +32,11 @@ with connection:
             id SERIAL PRIMARY KEY,
             nome VARCHAR(255) NOT NULL,
             especie VARCHAR(255) NOT NULL,
-            raca VARCHAR(255) NOT NULL,
             idade INTEGER NOT NULL,
             descricao TEXT NOT NULL,
             imagem VARCHAR(255) NOT NULL,
-            local_circulacao VARCHAR(255) NOT NULL);
+            local_circulacao VARCHAR(255) NOT NULL,
+            sexo VARCHAR(255) NOT NULL);
             
         """)
 
@@ -52,10 +52,10 @@ def home(username):
         # Obtenha os dados do formulário
         nome = request.form['name']
         especie = request.form['species']
-        raca = request.form['breed']
         idade = request.form['age']
         descricao = request.form['description']
         centro = request.form['center']
+        sexo = request.form['sexo']
 
         imagem = request.files['image']  # Obtém o arquivo de imagem do formulário
         imagem.save('static/images/' + imagem.filename)  # Salva a imagem no diretório local
@@ -65,15 +65,15 @@ def home(username):
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute('''
-                    INSERT INTO animal (nome, especie, raca, idade, descricao, imagem, local_circulacao)
+                    INSERT INTO animal (nome, especie, idade, descricao, imagem, local_circulacao,sexo)
                     VALUES (%s, %s, %s, %s, %s, %s, %s)
-                    ''', (nome, especie, raca, idade, descricao, caminho_imagem, centro))
+                    ''', (nome, especie,idade, descricao, caminho_imagem, centro,sexo))
 
 
     with connection:
         with connection.cursor() as cursor:
             # Execute uma consulta SQL para obter os dados da tabela 'animal'
-                cursor.execute("SELECT id, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
+                cursor.execute("SELECT id, nome, especie,idade, descricao, imagem, local_circulacao, sexo FROM animal")
                 animal = cursor.fetchall()  # Obtém todos os registros como uma lista de tuplas
 
 
@@ -142,7 +142,7 @@ def singup():
 def fetch_animals():
     with connection:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT id, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal")
+            cursor.execute("SELECT id, nome, especie, idade, descricao, imagem, local_circulacao, sexo FROM animal")
             animal = cursor.fetchall()
     return jsonify(animal)
 
@@ -163,6 +163,33 @@ def remove_animal():
 def get_animal(animal_id):
     with connection:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT id, nome, especie, raca, idade, descricao, imagem, local_circulacao FROM animal WHERE id = %s", (animal_id,))
+            cursor.execute("SELECT id, nome, especie, idade, descricao, imagem, local_circulacao, sexo FROM animal WHERE id = %s", (animal_id,))
             animal = cursor.fetchone()  # Obtenha um único registro
     return jsonify(animal)  # Envie os dados do animal como uma resposta JSON
+
+
+@views.route('/update_animal', methods=['POST'])
+def update_animal():
+    # Obtenha os dados do formulário
+    animal_id = request.form['id']
+    nome = request.form['name']
+    especie = request.form['species']
+    idade = request.form['age']
+    descricao = request.form['description']
+    centro = request.form['center']
+    sexo = request.form['sexo']
+
+    imagem = request.files['image']  # Obtém o arquivo de imagem do formulário
+    imagem.save('static/images/' + imagem.filename)  # Salva a imagem no diretório local
+    caminho_imagem = 'images/' + imagem.filename  # Obtém o caminho completo do arquivo salvo
+
+    # Atualize os dados no banco de dados
+    with connection:
+        with connection.cursor() as cursor:
+            cursor.execute('''
+                UPDATE animal
+                SET nome = %s, especie = %s, idade = %s, descricao = %s, imagem = %s, local_circulacao = %s, sexo = %s
+                WHERE id = %s
+            ''', (nome, especie, idade, descricao, caminho_imagem, centro, sexo, animal_id))
+
+    return redirect(url_for('views.home', username='ufpe'))

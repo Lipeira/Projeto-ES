@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Fdk5O5ztyULntgYGpEofNyYjROKZbM2aqLR5n/Dgj+TWn5w5jJ8gFwtSNd1r2rXq3lZxGIPt03exbsimBjR1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ufVEIVl1TL/zqX9sW1UpD2M/F7bP+Jf0/Z7V8TCAawuT7Vp+W+NMU/2IYPQBEY9XJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -56,11 +57,17 @@
             <option value="age2">1-10 anos</option>
             <option value="age3">Acima de 10 anos</option>
           </select>
+          <label for="sexo-select">Sexo:</label>
+          <select id="sexo-select">
+            <option value="all">Todas</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
           <button type="submit">Filtrar</button>
+          <div id="animal-count">
+            Total de animais registrados: <span id="count">0</span>
+          </div>
         </form>
-        <div id="animal-count">
-          Total de animais registrados: <span id="count">0</span>
-        </div>
       </div>
 
 <!-- Adicione o jQuery no cabeçalho, caso ainda não tenha -->
@@ -82,24 +89,19 @@
   });
 </script>
 
-
-
-
     <div class="card-container">
       {% for a in animal %}
-      <div class="card" data-species="{{ a[2] }}" data-breed="{{ a[3] }}"  data-center="{{a[7]}}"  data-age="{{ a[4] }}" data-description="{{ a[5] }}" data-image="{{ url_for('static', filename=a[6]) }}" id="animal-{{ a[0] }}">
+      <div class="card" data-id="{{ a[0] }}" data-species="{{ a[2] }}" data-center="{{a[6]}}" data-sexo = "{{a[7]}}" data-age="{{ a[3] }}" data-description="{{ a[4] }}" data-image="{{ url_for('static', filename=a[5]) }}" id="animal-{{ a[0] }}">
         <div class="card-info">
-          <img src="{{ url_for('static', filename=a[6]) }}" alt="{{ a[1] }} Imagem" height="150" width="150">
+          <img src="{{ url_for('static', filename=a[5]) }}" alt="{{ a[1] }} Imagem" height="150" width="150">
           <h2>{{ a[1] }}</h2>
           <p>Espécie: {{ a[2] }}</p>
-          <p>Raça: {{ a[3] }}</p>
-          <p>Idade: {{ a[4] }} anos</p>
+          <p>Sexo: {{ a[7] }}</p>
+          <p>Idade: {{ a[3] }} anos</p>
         </div>
       </div>
       {% endfor %}
     </div>
-
-
 
     </main>
     
@@ -119,11 +121,19 @@
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
       
-        <label for="species">Espécie:</label>
-        <input type="text" id="species" name="species" required>
-      
-        <label for="breed">Raça:</label>
-        <input type="text" id="breed" name="breed" required>
+
+        <label for="center">Espécie:</label>
+        <select id="species" name="species" style="width: 100%; margin-bottom: 15px;" required>
+          <option value="Cachorro">Cachorro</option>
+          <option value="CAC">Gato</option>
+          <option value="CAC">Outro</option>
+        </select>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" style="width: 100%; margin-bottom: 15px;" required>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
       
         <label for="age">Idade:</label>
         <input type="number" id="age" name="age" required>
@@ -171,10 +181,10 @@
 </div>
 
 <!-- Adicione um elemento para a nova tela com fundo semi-transparente -->
-<div class="overlay"></div>
+<div class="overlay" id="overlay"></div>
 
 <!-- Adicione um elemento para o conteúdo da nova tela -->
-<div class="popup">
+<div class="popup" id="popup">
     <div class="animal-info">
         <div class="gallery">
             <div class="gallery-item">
@@ -188,8 +198,8 @@
               <p class="animal-value species">Canina</p>
             </div>
             <div class="animal-property">
-              <p class="animal-label"><strong>Raça:</strong></p>
-              <p class="animal-value breed">Vira-lata</p>
+              <p class="animal-label"><strong>Sexo:</strong></p>
+              <p class="animal-value sexo">Masculino</p>
             </div>
             <div class="animal-property">
               <p class="animal-label"><strong>Idade:</strong></p>
@@ -197,20 +207,32 @@
             </div>
             <div class="animal-property">
               <p class="animal-label"><strong>Local:</strong></p>
-              <p class="animal-value">CCSA</p>
+              <p class="animal-value center">CCSA</p>
             </div>
             <div class="animal-property">
               <p class="animal-label"><strong>Castrado:</strong></p>
               <p class="animal-value">Sim</p>
             </div>
+            <div class="animal-property">
+              <p class="animal-label"><strong>ID:</strong></p>
+              <p class="animal-value id">10</p>
+            </div>
           </div>
           <p class="animal-description">Tommy é um cachorro de personalidade marcante, sua simpatia é contagiante e ele adora estar perto de pessoas e outros cães. Com seus 5 anos de idade, ele tem muita energia e sempre está pronto para brincar e correr.</p>
+        </div>
+        <button id= 'update-button' class="update-button">
+          <i class="fas fa-pencil-alt"></i>
+        </button>        
     </div>
 </div>  
 
 <script>
 
 // Adicione um event listener a cada card
+
+
+
+
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
   card.addEventListener('click', () => {
@@ -233,14 +255,18 @@ document.querySelector('.overlay').addEventListener('click', () => {
 
 <script>
 
-function updatePopup(name, species, breed, age, description, imageUrl) {
+
+function updatePopup(name, species, center, age, description, imageUrl, id,sexo) {
   document.querySelector('.animal-name').textContent = name;
   document.querySelector('.animal-value.species').textContent = species;
-  document.querySelector('.animal-value.breed').textContent = breed;
+  document.querySelector('.animal-value.center').textContent = center;
   document.querySelector('.animal-value.age').textContent = age + ' anos';
   document.querySelector('.animal-description').textContent = description;
   document.querySelector('.gallery-item img').src = imageUrl;
+  document.querySelector('.animal-value.id').textContent = id;
+  document.querySelector('.animal-value.sexo').textContent = sexo;
 }
+
 
 // Adicione um event listener a cada card
 const cards2 = document.querySelectorAll('.card');
@@ -250,23 +276,18 @@ cards2.forEach(card => {
     updatePopup(
       card.querySelector('h2').textContent,
       card.getAttribute('data-species'),
-      card.getAttribute('data-breed'),
+      card.getAttribute('data-center'),
       card.getAttribute('data-age'),
       card.getAttribute('data-description'),
-      card.querySelector('img').src
+      card.querySelector('img').src,
+      card.getAttribute('id'),
+      card.getAttribute('data-sexo')
     );
 
     // Adicione a classe "show" ao elemento do fundo e da nova tela
     document.querySelector('.overlay').classList.add('show');
     document.querySelector('.popup').classList.add('show');
   });
-});
-
-// Adicione um event listener ao elemento do fundo para fechar a nova tela
-document.querySelector('.overlay').addEventListener('click', () => {
-  // Remova a classe "show" do elemento do fundo e da nova tela
-  document.querySelector('.overlay').classList.remove('show');
-  document.querySelector('.popup').classList.remove('show');
 });
 
 </script>
@@ -339,6 +360,8 @@ modal.addEventListener("click", function(event) {
       const center = $("#center-select").val();
       const species = $("#breed-select").val();
       const age = $("#age-select").val();
+      const sex = $("#sexo-select").val();
+
 
       let count = 0;
       $(".card").each(function () {
@@ -346,9 +369,12 @@ modal.addEventListener("click", function(event) {
         const cardCenter = card.data("center");
         const cardSpecies = card.data("species");
         const cardAge = card.data("age");
+        const cardSex = card.data("sexo");
+        
 
         const isCenterMatch = center === "all" || center === cardCenter;
         const isSpeciesMatch = species === "all" || species === cardSpecies;
+        const isSexMatch = sex === "all" || sex === cardSex;
         let isAgeMatch = age === "all";
 
         if (age === "age1") {
@@ -359,7 +385,7 @@ modal.addEventListener("click", function(event) {
           isAgeMatch = cardAge > 10;
         }
 
-        if (isCenterMatch && isSpeciesMatch && isAgeMatch) {
+        if (isCenterMatch && isSpeciesMatch && isAgeMatch && isSexMatch) {
           card.show();
           count++;
         } else {
@@ -503,6 +529,60 @@ modal.addEventListener("click", function(event) {
   </div>
 </footer>
 
+
+
+<!-- <script>
+function showUpdateForm(card, isUpdate = false) {
+  const addFormModal = document.getElementById('add-form-modal');
+  const animalForm = document.getElementById('animal-form');
+  const nameInput = document.getElementById('name');
+  const speciesSelect = document.getElementById('species');
+  const sexoSelect = document.getElementById('sexo');
+  const ageInput = document.getElementById('age');
+  const descriptionInput = document.getElementById('description');
+  const centerSelect = document.getElementById('center');
+  const popup = document.getElementsByClassName('popup');
+
+  // Obtenha os dados do animal com base no card passado como argumento
+  const animalData = {
+    id: card.getAttribute('data-id'),
+    nome: card.querySelector('h2').textContent,
+    especie: card.getAttribute('data-species'),
+    sexo: card.getAttribute('data-sexo'),
+    idade: card.getAttribute('data-age'),
+    descricao: card.getAttribute('data-description'),
+    local_circulacao: card.getAttribute('data-center'),
+  };
+
+  // Adicione um campo oculto para armazenar o ID do animal
+  const hiddenIdInput = document.createElement('input');
+  hiddenIdInput.type = 'hidden';
+  hiddenIdInput.name = 'id';
+  hiddenIdInput.value = animalData.id;
+  animalForm.appendChild(hiddenIdInput);
+
+  // Preencha os campos do formulário com os dados do animal
+  nameInput.value = animalData.nome;
+  speciesSelect.value = animalData.especie;
+  sexoSelect.value = animalData.sexo;
+  ageInput.value = animalData.idade;
+  descriptionInput.value = animalData.descricao;
+  centerSelect.value = animalData.local_circulacao;
+
+  addFormModal.style.display = 'block';
+}
+
+// Atualize o event listener para lidar com múltiplos cards
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('click', () => {
+    showUpdateForm(card, true);
+  });
+});
+
+const animalForm = document.getElementById('animal-form');
+animalForm.setAttribute('action', '/update_animal');
+
+</script> -->
 
 
 </body>

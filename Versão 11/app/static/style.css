@@ -380,7 +380,7 @@
 /* Estilos para o painel à esquerda */
 .sidebar {
   width: 200px;
-  height: 380px;
+  height: 430px;
   background-color: var(--cor-destaque); /* Cor de destaque */
   color: #fff;
   padding: 20px;
@@ -477,7 +477,11 @@
     margin-top: 10px;
     margin-left: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
   }
+  #animal-form button[type="submit"]:hover {
+      background-color: #3c2180;
+    }
 
   /* Estilo para a lista de seleção de centro */
   #center {
@@ -514,7 +518,7 @@ footer {
   color: #fff;
   padding: 40px 0;
   font-size: 14px;
-  margin-top: 550px;
+  margin-top: 190px;
 }
 
 
@@ -620,4 +624,39 @@ footer {
 .toggle-sidebar:focus,
 .toggle-sidebar:active {
   outline: none;
+}
+
+/* Estilos do botão de atualização */
+.update-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #512DA8;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-button:hover {
+  background-color: #3c2180;
+}
+
+#remove-animal-btn{
+background-color: #673AB7;
+color: #fff;
+border: none;
+padding: 10px 20px;
+margin-top: 10px;
+margin-left: 10px;
+cursor: pointer;
+transition: background-color 0.3s;
+
+}
+
+#remove-animal-btn:hover {
+  background-color: #3c2180;
 }
