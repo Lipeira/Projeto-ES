@@ -17,6 +17,9 @@
             <div class="accessibility">
                 <button class="accessibility-btn"><i class="fas fa-moon"></i></button>
             </div>
+            <div class="logo-title">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bras%C3%A3o_da_UFPE.png/1200px-Bras%C3%A3o_da_UFPE.png" alt="Ícone da faculdade">
+            </div>              
             <h2>Login</h2>
             <form method="POST" action="{{ url_for('views.login') }}">
                 <div class="user-box">
@@ -27,7 +30,7 @@
                     <input type="password" name="password" required="">
                     <label>Password</label>
                 </div>
-                <a href="{{ url_for('views.singup') }}" class="signup-link">Cadastrar</a>
+                <!-- <a href="{{ url_for('views.singup') }}" class="signup-link">Cadastrar</a> -->
                 <button type="submit" class="btn"><i class="fas fa-paw"></i> Logar</button>
             </form>
 

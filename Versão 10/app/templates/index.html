@@ -28,6 +28,9 @@
       <!-- Barra de filtro -->
 
       <div class="sidebar">
+        <button id="toggle-sidebar" class="toggle-sidebar">
+          <i class="fas fa-chevron-left"></i>
+        </button>
         <h2><i class="fas fa-filter"></i>  Filtros</h2>
         <form id="filter-form">
           <label for="center-select">Centro:</label>
@@ -60,20 +63,43 @@
         </div>
       </div>
 
+<!-- Adicione o jQuery no cabeçalho, caso ainda não tenha -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-      <div class="card-container">
-        {% for animal in animal %}
-        <div class="card" data-center="{{ animal[7] }}" data-species="{{ animal[2] }}" data-age="{{ animal[4] }}" id="animal-{{ animal[0] }}">
-          <div class="card-info">
-            <img src="{{ url_for('static', filename=animal[6]) }}" alt="{{ animal[1] }} Imagem" height="150" width="150">
-              <h2>{{ animal[1] }}</h2>
-              <p>Espécie: {{ animal[2] }}</p>
-              <p>Raça: {{ animal[3] }}</p>
-              <p>Idade: {{ animal[4] }} anos</p>
-          </div>
+<script>
+  $(document).ready(function() {
+    $('#toggle-sidebar').click(function() {
+      $('.sidebar').toggleClass('minimized');
+      
+      if ($('.sidebar').hasClass('minimized')) {
+        $('#toggle-sidebar i').removeClass('fa-chevron-left');
+        $('#toggle-sidebar i').addClass('fa-chevron-right');
+      } else {
+        $('#toggle-sidebar i').removeClass('fa-chevron-right');
+        $('#toggle-sidebar i').addClass('fa-chevron-left');
+      }
+    });
+  });
+</script>
+
+
+
+
+    <div class="card-container">
+      {% for a in animal %}
+      <div class="card" data-species="{{ a[2] }}" data-breed="{{ a[3] }}"  data-center="{{a[7]}}"  data-age="{{ a[4] }}" data-description="{{ a[5] }}" data-image="{{ url_for('static', filename=a[6]) }}" id="animal-{{ a[0] }}">
+        <div class="card-info">
+          <img src="{{ url_for('static', filename=a[6]) }}" alt="{{ a[1] }} Imagem" height="150" width="150">
+          <h2>{{ a[1] }}</h2>
+          <p>Espécie: {{ a[2] }}</p>
+          <p>Raça: {{ a[3] }}</p>
+          <p>Idade: {{ a[4] }} anos</p>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
+    </div>
+
+
 
     </main>
     
@@ -113,7 +139,7 @@
           <option value="CFCH">CFCH</option>
           <option value="CAC">CAC</option>
           <option value="CIN">CIN</option>
-          <option value="CIN">CCSA</option>
+          <option value="CCSA">CCSA</option>
           <option value="CTG">CTG</option>
 
           <!-- Adicione mais opções de centros aqui -->
@@ -144,42 +170,43 @@
   </div>
 </div>
 
-    <!-- Adicione um elemento para a nova tela com fundo semi-transparente -->
-    <div class="overlay"></div>
+<!-- Adicione um elemento para a nova tela com fundo semi-transparente -->
+<div class="overlay"></div>
 
-    <!-- Adicione um elemento para o conteúdo da nova tela -->
-    <div class="popup">
-        <div class="animal-info">
-            <div class="gallery">
-                <div class="gallery-item">
-                  <img src="https://picsum.photos/400/300?random=1" alt="Cachorro">
-                </div>
-                <div class="gallery-item">
-                  <img src="https://picsum.photos/400/300?random=2" alt="Gato">
-                </div>
-              </div>              
-              <h2 class="animal-name">Tommy</h2>
-              <div class="animal-details">
-                <div class="animal-property">
-                  <p class="animal-label"><strong>Idade:</strong></p>
-                  <p class="animal-value">5 anos</p>
-                </div>
-                <div class="animal-property">
-                  <p class="animal-label"><strong>Raça:</strong></p>
-                  <p class="animal-value">Vira-lata</p>
-                </div>
-                <div class="animal-property">
-                  <p class="animal-label"><strong>Espécie:</strong></p>
-                  <p class="animal-value">Canina</p>
-                </div>
-                <div class="animal-property">
-                  <p class="animal-label"><strong>Local:</strong></p>
-                  <p class="animal-value">CCSA</p>
-                </div>
-              </div>
-              <p class="animal-description">Tommy é um cachorro de personalidade marcante, sua simpatia é contagiante e ele adora estar perto de pessoas e outros cães. Com seus 5 anos de idade, ele tem muita energia e sempre está pronto para brincar e correr.</p>
-        </div>
-      </div>      
+<!-- Adicione um elemento para o conteúdo da nova tela -->
+<div class="popup">
+    <div class="animal-info">
+        <div class="gallery">
+            <div class="gallery-item">
+              <img src="https://picsum.photos/400/300?random=1" alt="Cachorro">
+            </div>
+          </div>              
+          <h2 class="animal-name">Tommy</h2>
+          <div class="animal-details">
+            <div class="animal-property">
+              <p class="animal-label"><strong>Espécie:</strong></p>
+              <p class="animal-value species">Canina</p>
+            </div>
+            <div class="animal-property">
+              <p class="animal-label"><strong>Raça:</strong></p>
+              <p class="animal-value breed">Vira-lata</p>
+            </div>
+            <div class="animal-property">
+              <p class="animal-label"><strong>Idade:</strong></p>
+              <p class="animal-value age">5 anos</p>
+            </div>
+            <div class="animal-property">
+              <p class="animal-label"><strong>Local:</strong></p>
+              <p class="animal-value">CCSA</p>
+            </div>
+            <div class="animal-property">
+              <p class="animal-label"><strong>Castrado:</strong></p>
+              <p class="animal-value">Sim</p>
+            </div>
+          </div>
+          <p class="animal-description">Tommy é um cachorro de personalidade marcante, sua simpatia é contagiante e ele adora estar perto de pessoas e outros cães. Com seus 5 anos de idade, ele tem muita energia e sempre está pronto para brincar e correr.</p>
+    </div>
+</div>  
 
 <script>
 
@@ -200,8 +227,55 @@ document.querySelector('.overlay').addEventListener('click', () => {
   document.querySelector('.popup').classList.remove('show');
 });
 
+</script>
+
+
+
+<script>
+
+function updatePopup(name, species, breed, age, description, imageUrl) {
+  document.querySelector('.animal-name').textContent = name;
+  document.querySelector('.animal-value.species').textContent = species;
+  document.querySelector('.animal-value.breed').textContent = breed;
+  document.querySelector('.animal-value.age').textContent = age + ' anos';
+  document.querySelector('.animal-description').textContent = description;
+  document.querySelector('.gallery-item img').src = imageUrl;
+}
+
+// Adicione um event listener a cada card
+const cards2 = document.querySelectorAll('.card');
+cards2.forEach(card => {
+  card.addEventListener('click', () => {
+    // Atualizar a popup com base nos atributos data-* do card clicado
+    updatePopup(
+      card.querySelector('h2').textContent,
+      card.getAttribute('data-species'),
+      card.getAttribute('data-breed'),
+      card.getAttribute('data-age'),
+      card.getAttribute('data-description'),
+      card.querySelector('img').src
+    );
+
+    // Adicione a classe "show" ao elemento do fundo e da nova tela
+    document.querySelector('.overlay').classList.add('show');
+    document.querySelector('.popup').classList.add('show');
+  });
+});
+
+// Adicione um event listener ao elemento do fundo para fechar a nova tela
+document.querySelector('.overlay').addEventListener('click', () => {
+  // Remova a classe "show" do elemento do fundo e da nova tela
+  document.querySelector('.overlay').classList.remove('show');
+  document.querySelector('.popup').classList.remove('show');
+});
 
 </script>
+
+
+
+
+
+
 
 
 
@@ -395,6 +469,9 @@ modal.addEventListener("click", function(event) {
   </script>
 
 
+
+
+
 <footer>
   <div class="footer-info">
     <div class="footer-section">
@@ -425,6 +502,8 @@ modal.addEventListener("click", function(event) {
     &copy; 2023 - Todos os direitos reservados.
   </div>
 </footer>
+
+
 
 </body>
 
