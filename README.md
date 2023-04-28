@@ -2,6 +2,16 @@
 
 > De acordo com a Organização Mundial de Saúde (OMS), somente no Brasil, cerca de 30 milhões de animais estão abandonados, sendo aproximadamente 20 milhões de cães e 10 milhões de gatos. Em grandes metrópoles, para cada cinco habitantes há um cachorro. Desses, 10% estão abandonados (25 de mai. de 2022)
 
+## 👽 Deploy do site 
+
+Para acessar o deploy, [CLIQUE AQUI]()
+
+## 👻 Testes feitos no site, utilizando Unittest
+
+```
+
+```
+
 ## 💻 Challenge Based Learning aplicado ao Projeto
 
 * *Que big idea você propõe para o projeto?*:<br>Propomos como tema principal: `Situação dos animais abandonados e abrigos.`
